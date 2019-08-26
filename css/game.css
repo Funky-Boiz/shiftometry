@@ -1,0 +1,77 @@
+.square{
+  height: 30px;
+  width: 30px;
+  border: solid black 1px;
+}
+.circle{
+  height: 30px;
+  width: 30px;
+  border: solid black 1px;
+  border-radius: 50%;
+}
+.triangle{
+  width: 0; 
+  height: 0;  
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-bottom: 25px solid green;
+}
+
+/* hexagon built from https://css-tricks.com/the-shapes-of-css/ */
+.hexagon {
+  width: 100px;
+  height: 55px;
+  background: red;
+  position: relative;
+}
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid red;
+}
+.hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid red;
+}
+#shape {
+  /* height: 30px;
+  width: 30px;
+  border: solid black 1px; */
+  position: absolute;
+  top: 180px;
+  left:30px;
+  /* transition: 500ms; */
+}
+
+#gameWindow {
+  border: solid black 1px;
+  height: 400px;
+  width: 850px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.goalGrid {
+  display: grid;
+  float: right;
+}
+
+.goal {
+  border: solid black 1px;
+  height: 98px;
+  width: 55px;
+}
