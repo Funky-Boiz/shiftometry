@@ -1,0 +1,28 @@
+#shape {
+  height: 30px;
+  width: 30px;
+  border: solid black 1px;
+  position: absolute;
+  top: 180px;
+  left:30px;
+  /* transition: 500ms; */
+}
+
+#gameWindow {
+  border: solid black 1px;
+  height: 400px;
+  width: 850px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.goalGrid {
+  display: grid;
+  float: right;
+}
+
+.goal {
+  border: solid black 1px;
+  height: 98px;
+  width: 55px;
+}
