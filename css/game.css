@@ -10,19 +10,47 @@
   border-radius: 50%;
 }
 .triangle{
-  height: 250px;
-  width: 250px;
-  border: 50px solid black;
+  width: 0; 
+  height: 0;  
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-bottom: 25px solid green;
 }
-.hexagon{
-  height: 30px;
-  width: 30px;
-  border: solid black 1px;
+
+/* hexagon built from https://css-tricks.com/the-shapes-of-css/ */
+.hexagon {
+  width: 100px;
+  height: 55px;
+  background: red;
+  position: relative;
+}
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid red;
+}
+.hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid red;
 }
 #shape {
-  height: 30px;
+  /* height: 30px;
   width: 30px;
-  border: solid black 1px;
+  border: solid black 1px; */
   position: absolute;
   top: 180px;
   left:30px;

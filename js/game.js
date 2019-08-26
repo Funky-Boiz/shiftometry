@@ -79,24 +79,28 @@ function randomShapeGenerator(){
     //generate circle
     var newCircle = document.createElement('div');
     newCircle.className = 'circle';
+    newCircle.id = 'shape';
     gameWindow.appendChild(newCircle);
     break;
   case 2:
     //generate square
     var newSquare = document.createElement('div');
-   newSquare.className = 'square';
+    newSquare.className = 'square';
+    newSquare.id = 'shape';
     gameWindow.appendChild(newSquare);
     break;
   case 3:
     //generate tri
     var newTriangle = document.createElement('div');
     newTriangle.className = 'triangle';
+    newTriangle.id = 'shape';
     gameWindow.appendChild(newTriangle);
     break;
   case 4:
     //generate hex
     var newHexagon = document.createElement('div');
     newHexagon.className = 'hexagon';
+    newHexagon.id = 'shape';
     gameWindow.appendChild(newHexagon);
     break;
   }
