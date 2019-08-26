@@ -6,6 +6,12 @@ var squareGoal = document.getElementById('squareGoal');
 var circleGoal = document.getElementById('circleGoal');
 var triangleGoal = document.getElementById('triangleGoal');
 var hexagonGoal = document.getElementById('hexagonGoal');
+var score = 0;
+
+var highScore = [];
+
+var attempts = 3;
+
 
 //position of moving block shape
 var pos = {
@@ -25,6 +31,18 @@ function movingRight(){
     // block.id = '';
     checkIfCorrect();
     gameWindow.removeChild(block);
+    if(attempts > 0){
+      randomShapeGenerator();
+      block = document.getElementById('shape');
+      pos.x = 30;
+      pos.y = 180;
+      movingRight();
+      console.log(attempts);
+      scoreAndAttemptsOnPage();
+    }
+    else{
+      gameOver();
+    }
   }
 }
 //movement vertically
@@ -51,7 +69,7 @@ function logKey(e) {
   case 'ArrowDown':
     movingDown();
     break;
-    
+
   default:
     break;
   }
@@ -59,16 +77,23 @@ function logKey(e) {
 
 function checkIfCorrect(){
   if (pos.y <= 55 && pos.y >= 5 && block.className === 'circle'){
-    console.log('circle');
+    score+=100;
   }
-  if (pos.y <= 155 && pos.y >= 105 && block.className === 'square'){
+  else if(pos.y <= 155 && pos.y >= 105 && block.className === 'square'){
+    score+=100;
     console.log('square');
   }
-  if (pos.y <= 255 && pos.y >= 205 && block.className === 'triangle'){
+  else if(pos.y <= 255 && pos.y >= 205 && block.className === 'triangle'){
+    score+=100;
     console.log('triangle');
   }
-  if (pos.y <= 355 && pos.y >= 305 && block.className === 'hexagon'){
+  else if(pos.y <= 355 && pos.y >= 305 && block.className === 'hexagon'){
+    score+=100;
     console.log('hexamex');
+  }
+  else {
+    attempts--;
+    score-=25;
   }
 }
 
@@ -104,11 +129,52 @@ function randomShapeGenerator(){
     gameWindow.appendChild(newHexagon);
     break;
   }
-  
+
 }
 
-randomShapeGenerator();
+function scoreAndAttemptsOnPage(){
+  var elScore = document.getElementById('score');
+  var elAttempts = document.getElementById('attempts');
+
+  elScore.textContent = 'Score: ' + score;
+  elAttempts.textContent ='Attempts: ' + attempts;
+}
+
+function gameOver(){
+  alert('WRONG BITCH, TRY AGAIN');
+  highScore.push(score);
+  score = 0;
+  attempts = 3;
+  saveHighScores();
+}
+
+function loadHighScore(){
+  var loadedScore = JSON.parse(localStorage.getItem('scores'));
+  if(loadedScore.length){
+    highScore = loadedScore;
+  }
+}
+
+function topFive(){
+  for(var i = 0; i < highScore.length; i++){
+    if(score > highScore[i]){
+      highScore.push(score);
+    }
+  }
+}
+
+
+
+
+loadHighScore();
+scoreAndAttemptsOnPage();
+// randomShapeGenerator();
 movingRight();
 
 document.addEventListener('keydown', logKey);
+
+function saveHighScores(){
+  var storeScores = JSON.stringify(highScore);
+  localStorage.setItem('scores', storeScores);
+}
 
