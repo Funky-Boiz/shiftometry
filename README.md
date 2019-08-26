@@ -1,1 +1,15 @@
-# shiftometry
+# Shiftometry
+
+Team Members:
+  Chris Cummings
+  David Zheng
+  Corey Marchand
+  Avrey Brown
+
+Description:
+
+Overall Problem Domain:
+
+Libraries:
+
+Version 1.0.0
