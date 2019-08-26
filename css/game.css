@@ -1,3 +1,24 @@
+.square{
+  height: 30px;
+  width: 30px;
+  border: solid black 1px;
+}
+.circle{
+  height: 30px;
+  width: 30px;
+  border: solid black 1px;
+  border-radius: 50%;
+}
+.triangle{
+  height: 250px;
+  width: 250px;
+  border: 50px solid black;
+}
+.hexagon{
+  height: 30px;
+  width: 30px;
+  border: solid black 1px;
+}
 #shape {
   height: 30px;
   width: 30px;

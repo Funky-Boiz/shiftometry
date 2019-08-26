@@ -18,7 +18,7 @@ function movingRight(){
   if (pos.x < 770){
     requestAnimationFrame(movingRight);
     var x = pos.x;
-    pos.x = x + 1;
+    pos.x = x + 4;
     block.style.left = pos.x + 'px';
   }
   else {
@@ -27,7 +27,7 @@ function movingRight(){
     gameWindow.removeChild(block);
   }
 }
-
+//movement vertically
 function movingUp(){
   if (pos.y > 6){
     pos.y -= 25;
@@ -40,7 +40,7 @@ function movingDown(){
     block.style.top = pos.y + 'px';
   }
 }
-
+//taking key inputs
 function logKey(e) {
   switch (e.code) {
   case 'KeyW':
@@ -56,13 +56,55 @@ function logKey(e) {
     break;
   }
 }
-  
+
 function checkIfCorrect(){
-  if (pos.y <= 55 && pos.y >= 5 && block.className === 'square'){
-    console.log('you did it');
+  if (pos.y <= 55 && pos.y >= 5 && block.className === 'circle'){
+    console.log('circle');
+  }
+  if (pos.y <= 155 && pos.y >= 105 && block.className === 'square'){
+    console.log('square');
+  }
+  if (pos.y <= 255 && pos.y >= 205 && block.className === 'triangle'){
+    console.log('triangle');
+  }
+  if (pos.y <= 355 && pos.y >= 305 && block.className === 'hexagon'){
+    console.log('hexamex');
   }
 }
-// movingRight();
+
+function randomShapeGenerator(){
+  var randomNumber = Math.floor(Math.random() * 4) + 1;
+  switch (randomNumber){
+  case 1:
+    //generate circle
+    var newCircle = document.createElement('div');
+    newCircle.className = 'circle';
+    gameWindow.appendChild(newCircle);
+    break;
+  case 2:
+    //generate square
+    var newSquare = document.createElement('div');
+   newSquare.className = 'square';
+    gameWindow.appendChild(newSquare);
+    break;
+  case 3:
+    //generate tri
+    var newTriangle = document.createElement('div');
+    newTriangle.className = 'triangle';
+    gameWindow.appendChild(newTriangle);
+    break;
+  case 4:
+    //generate hex
+    var newHexagon = document.createElement('div');
+    newHexagon.className = 'hexagon';
+    gameWindow.appendChild(newHexagon);
+    break;
+  }
+  
+}
+
+randomShapeGenerator();
+movingRight();
 
 document.addEventListener('keydown', logKey);
 
