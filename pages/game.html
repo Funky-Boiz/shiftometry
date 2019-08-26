@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shiftometry</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/game.css">
-  </head>
-  <body>
-    <header>
-      <h1>Shiftometry</h1>
-    </header>
-    <main>
-      <section id="gameWindow">
-        <div></div>
-        <div id="shape" class="square"></div>
-          <div class="goalGrid">
-              <div id="circleGoal" class="goal">circle</div>
-              <div id="squareGoal" class="goal">square</div>
-              <div id="triangleGoal" class="goal">triangle</div>
-              <div id="hexagonGoal" class="goal">hexagon</div>
-          </div>
-    </section>
-    <h3 id="score"></h3>
-    <h3 id="attempts"></h3>
-    </main>
-    <script src="/js/game.js"></script>
-  </body>
+    <head>
+        <title>SHIFTOMETRY</title>
+        <link rel = "stylesheet"  type = "text/css" href = "css/reset.css" />
+        <link rel = "stylesheet"  type = "text/css" href = "/css/game.css" />
+        <link href="https://fonts.googleapis.com/css?family=Ruslan+Display&display=swap" rel="stylesheet">
+       
+    </head>
+    <body>
+     <header>
+         <h1>Shiftometry</h1>
+         <div id = "game-button">
+             <p class = "buttons"><a href = "/index.html">Home Page</a></p>
+             <p class = "buttons"><a href = "/pages/highscore.html">HighScores</a></p>
+         </div>               
+
+     </header>
+        <main>
+            <div class="area" >
+                <ul class="circles">
+                        <li class = "circle"></li>
+                        <li class = "circle"></li>
+                        <li class = "circle"></li>
+                        <li class = "circle"></li>
+                        <li class = "square"></li>
+                        <li class = "square"></li>
+                        <li class = "square"></li>
+                        <li class = "triangle"></li>
+                        <li class = "triangle"></li>
+                        <li class = "triangle"></li>
+                </ul>
+            </div>
+        </main>
+    </body>
+    
 </html>
