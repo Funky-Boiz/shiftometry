@@ -56,17 +56,12 @@ a{
     
 } */
 
-
-
-
-
-
 .circles{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 150%;
     overflow: hidden;
 }
 
@@ -176,4 +171,108 @@ a{
 
 }
 
+.square{
+    height: 30px;
+    width: 30px;
+    border: solid black 1px;
+   }
+   .circle{
+    height: 30px;
+    width: 30px;
+    border: solid black 1px;
+    border-radius: 50%;
+   }
+   .triangle{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 25px solid green;
+   }
+   /* hexagon built from https://css-tricks.com/the-shapes-of-css/ */
+   .hexagon {
+    width: 100px;
+    height: 55px;
+    background: red;
+    position: relative;
+   }
+   .hexagon:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid red;
+   }
+   .hexagon:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid red;
+   }
+   #shape {
+    /* height: 30px;
+    width: 30px;
+    border: solid black 1px; */
+    position: absolute;
+    top: 180px;
+    left:30px;
+    /* transition: 500ms; */
+   }
+   #gameWindow {
+    border: 5px solid rgb(0, 143, 17);
+    height: 400px;
+    width: 850px;
+    margin: 50px auto;
+    position: relative;
+    background:white;
+   }
+   .goalGrid {
+    display: grid;
+    float: right;
+   }
+   .goal {
+    border: inset rgb(0, 255, 65) 5px;
+    box-sizing:border-box;
+    /* font-family: Ruslan Display; */
+    height: 98px;
+    width: 55px;
+    
+   }
 
+   #score{
+       background: rgb(13, 2, 8);
+       font-family: Ruslan Display;
+       text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+       font-size: 25px;
+       text-align: center;
+       width: 35%;
+       margin: 30px auto;
+       padding-top:10px;
+       padding-bottom:10px;
+       text-align: center;
+       z-index: 2;
+   }
+   
+   #attempts{
+    background: rgb(13, 2, 8);
+    font-family: Ruslan Display;
+    font-size: 25px;
+    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    text-align: center;
+    width: 35%;
+    margin: 30px auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+    z-index: 2;
+    
+}

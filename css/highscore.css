@@ -69,11 +69,6 @@ a{
     
 }
 
-
-
-
-
-
 .circles{
     position: absolute;
     top: 0;
@@ -178,14 +173,24 @@ a{
     0%{
         transform: translateY(0) rotate(0deg);
         opacity: .8;
-        border-radius: 0;
+        border-radius: 100%;
     }
 
     100%{
         transform: translateY(-1000px) rotate(720deg);
         opacity: 1;
-        border-radius: 0;
+        border-radius: 100%;
     }
 
+}
+
+#highscore-table li{
+
+    margin-bottom:20px;
+    font-family: Ruslan Display;
+    font-size:15px;
+    color:rgb(13, 2, 8);
+    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+     /* list-style-type: square; */
 }
 

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>SHIFTOMETRY</title>
-        <link rel = "stylesheet"  type = "text/css" href = "css/reset.css" />
+        <link rel = "stylesheet"  type = "text/css" href = "/css/reset.css" />
         <link rel = "stylesheet"  type = "text/css" href = "/css/game.css" />
         <link href="https://fonts.googleapis.com/css?family=Ruslan+Display&display=swap" rel="stylesheet">
        
@@ -19,19 +19,35 @@
         <main>
             <div class="area" >
                 <ul class="circles">
-                        <li class = "circle"></li>
-                        <li class = "circle"></li>
-                        <li class = "circle"></li>
-                        <li class = "circle"></li>
-                        <li class = "square"></li>
-                        <li class = "square"></li>
-                        <li class = "square"></li>
-                        <li class = "triangle"></li>
-                        <li class = "triangle"></li>
-                        <li class = "triangle"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
                 </ul>
             </div>
+            <section>
+                <section id="gameWindow">
+                  <div></div>
+                  <div id="shape" class="square"></div>
+                    <div class="goalGrid">
+                        <div id="circleGoal" class="goal">circle</div>
+                        <div id="squareGoal" class="goal">square</div>
+                        <div id="triangleGoal" class="goal">triangle</div>
+                        <div id="hexagonGoal" class="goal">hexagon</div>
+                    </div>
+              </section>
+              <h3 id="score"></h3>
+              <h3 id="attempts"></h3>
+            </section>
         </main>
+        
+        <script src="/js/game.js"></script>
     </body>
     
 </html>
