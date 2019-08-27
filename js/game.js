@@ -9,6 +9,10 @@ var tryAgainButton = document.getElementById('try-again-button');
 var elScore = document.getElementById('score');
 var elAttempts = document.getElementById('attempts');
 
+//scaling difficulties
+var level = 1;
+var toNextLevel = 1;
+
 var score = 0;
 var username = '';
 
@@ -34,7 +38,8 @@ function movingRight(){
   if (pos.x < 770){
     requestAnimationFrame(movingRight);
     var x = pos.x;
-    pos.x = x + 4;
+    checkIfLevelUp();
+    pos.x = x + level;
     block.style.left = pos.x + 'px';
   }
   else {
@@ -85,20 +90,32 @@ function logKey(e) {
   }
 }
 
+function checkIfLevelUp(){
+  if (toNextLevel > 3) {
+    level++;
+    toNextLevel = 1;
+    console.log(level);
+  }
+}
+
 function checkIfCorrect(){
   if (pos.y <= 55 && pos.y >= 5 && block.className === 'circle'){
     score+=100;
+    toNextLevel++;
   }
   else if(pos.y <= 155 && pos.y >= 105 && block.className === 'square'){
     score+=100;
+    toNextLevel++;
     console.log('square');
   }
   else if(pos.y <= 255 && pos.y >= 205 && block.className === 'triangle'){
     score+=100;
+    toNextLevel++;
     console.log('triangle');
   }
   else if(pos.y <= 355 && pos.y >= 305 && block.className === 'hexagon'){
     score+=100;
+    toNextLevel++;
     console.log('hexamex');
   }
   else {
