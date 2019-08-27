@@ -5,7 +5,8 @@
         <link rel = "stylesheet"  type = "text/css" href = "/css/reset.css" />
         <link rel = "stylesheet"  type = "text/css" href = "/css/game.css" />
         <link href="https://fonts.googleapis.com/css?family=Ruslan+Display&display=swap" rel="stylesheet">
-       
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
     </head>
     <body>
      <header>
@@ -24,6 +25,7 @@
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
+                        <li><div class = "triangle"><div class = "inner-triangle"></div></div></li>
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
@@ -31,8 +33,15 @@
                         <li class = "circle2"></li>
                 </ul>
             </div>
+            <div id = "spin"></div>
             <section>
                 <section id="gameWindow">
+                  
+                    <div></div>
+                    <div id="shape" class="square"></div>
+                    <div class="goalGrid">
+                            <canvas id=c></canvas>
+
                     <div id="overlay">
                       <form id="name-input">
                           <input type="text" name="username" required placeholder="please enter name">
@@ -46,6 +55,7 @@
                       </form>
                    </div>
                         <div class="goalGrid">
+
                         <div id="circleGoal" class="goal">circle</div>
                         <div id="squareGoal" class="goal">square</div>
                         <div id="triangleGoal" class="goal">triangle</div>
@@ -58,6 +68,7 @@
         </main>
         
         <script src="/js/game.js"></script>
+        <script src="/js/gamewindow.js"></script>
     </body>
     
 </html>

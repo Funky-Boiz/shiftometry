@@ -51,22 +51,16 @@ a{
 
 
 /* courtesy of https://codepen.io/mohaiman/pen/MQqMyo */
-/* .area{
-    background: rgb(13, 2, 8);  
-    background: -webkit-linear-gradient(to left, rgb(0, 59, 0), rgb(0, 143, 17));  
-    width: 100%;
-    height:100vh;
-      
-    
-} */
+
 
 .circles{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 150%;
+    height: 125%;
     overflow: hidden;
+
 }
 
 .circles li{
@@ -75,9 +69,10 @@ a{
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(0, 255, 65, 0.5);
+    /* background: rgba(0, 255, 65, 0.5); */
     animation: animate 25s linear infinite;
     bottom: -150px;
+    /* border:10px inset rgba(0, 255, 65, 0.5); */
     
 }
 
@@ -86,6 +81,7 @@ a{
     width: 80px;
     height: 80px;
     animation-delay: 0s;
+    border:7px inset rgba(0, 255, 65, 0.5);
 }
 
 
@@ -95,6 +91,7 @@ a{
     height: 20px;
     animation-delay: 2s;
     animation-duration: 12s;
+    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(3){
@@ -102,6 +99,7 @@ a{
     width: 20px;
     height: 20px;
     animation-delay: 4s;
+    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(4){
@@ -110,6 +108,7 @@ a{
     height: 60px;
     animation-delay: 0s;
     animation-duration: 18s;
+    border:5px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(5){
@@ -117,20 +116,35 @@ a{
     width: 20px;
     height: 20px;
     animation-delay: 0s;
+    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
-.circles li:nth-child(6){
+/* .circles li .triangle {
     left: 75%;
-    width: 110px;
-    height: 110px;
     animation-delay: 3s;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 75px solid rgba(0, 255, 65, 0.5);
+} */
+.inner-triangle {
+    position:absolute;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 60px solid rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(7){
     left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
+    animation-delay: 15s;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 150px solid rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(8){
@@ -139,6 +153,7 @@ a{
     height: 25px;
     animation-delay: 15s;
     animation-duration: 45s;
+    border:4px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(9){
@@ -147,6 +162,7 @@ a{
     height: 15px;
     animation-delay: 2s;
     animation-duration: 35s;
+    border:2px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(10){
@@ -155,6 +171,17 @@ a{
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
+    border:10px inset rgba(0, 255, 65, 0.5);
+
+}
+.circles li:nth-child(11){
+    left: 15%;
+    animation-delay: 7s;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 37.5px solid rgba(0, 255, 65, 0.5);
 }
 
 
@@ -168,80 +195,123 @@ a{
     }
 
     100%{
-        transform: translateY(-1000px) rotate(720deg);
+        transform: translateY(-1100px) rotate(720deg);
         opacity: 1;
         border-radius: 0;
     }
 
 }
 
+/* Game Stuff */
+
 .square{
     height: 30px;
     width: 30px;
-    border: solid black 1px;
-   }
-   .circle{
+    background:rgb(13, 2, 8);
+    box-shadow: 
+    0 0 0 2px rgb(0, 143, 17),
+    0 0 0 3px rgb(0, 255, 65),
+    0 0 0 4px rgb(13, 2, 8),
+    0 0 0 5px rgb(0, 255, 65),
+    0 0 0 6px rgb(0, 143, 17);
+    -webkit-animation:rescale 1s infinite;
+    animation: rescale 1s infinite;
+  }
+  /* courtesy of https://codepen.io/nwolke/pen/pvLjro */
+  @-webkit-keyframes rescale{
+    0% {transform:rotate(0deg);}
+    10% {transform:rotate(36deg);}
+    20% {transform:rotate(72deg);}
+    30% {transform:rotate(108deg);}
+    40% {transform:rotate(144deg);}
+    50% {transform:rotate(180deg);}
+    60% {transform:rotate(216deg);}
+    70% {transform:rotate(252deg);}
+    80% {transform:rotate(288deg);}
+    90% {transform:rotate(334deg);}
+    100% {transform:rotate(360deg);}
+  }
+  
+  @keyframes rescale{
+    0% {transform:rotate(0deg);}
+    10% {transform:rotate(36deg);}
+    20% {transform:rotate(72deg);}
+    30% {transform:rotate(108deg);}
+    40% {transform:rotate(144deg);}
+    50% {transform:rotate(180deg);}
+    60% {transform:rotate(216deg);}
+    70% {transform:rotate(252deg);}
+    80% {transform:rotate(288deg);}
+    90% {transform:rotate(334deg);}
+    100% {transform:rotate(360deg);}
+  }
+   
+   /* .circle{
     height: 30px;
     width: 30px;
     border: solid black 1px;
     border-radius: 50%;
-   }
+    background:rgb(0, 143, 17);
+   } */
+   
+
    .triangle{
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 25px solid green;
+    border-bottom: 25px solid rgb(0, 143, 17);
+
    }
    /* hexagon built from https://css-tricks.com/the-shapes-of-css/ */
    .hexagon {
-    width: 100px;
-    height: 55px;
+    width: 25px;
+    height: 20px;
     background: red;
     position: relative;
+    
    }
    .hexagon:before {
     content: "";
     position: absolute;
-    top: -25px;
+    bottom: 20px;
     left: 0;
     width: 0;
     height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 25px solid red;
+    border-left: 13px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 8px solid red;
    }
    .hexagon:after {
     content: "";
     position: absolute;
-    bottom: -25px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 25px solid red;
+    bottom: -20px;
+    left: 0px;
+    top: 20px;
+    width: 0px;
+    height: 0px;
+    border-left: 13px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 8px solid red;
    }
    #shape {
-    /* height: 30px;
-    width: 30px;
-    border: solid black 1px; */
     position: absolute;
     top: 180px;
     left:30px;
-    /* transition: 500ms; */
    }
    #gameWindow {
     border: 5px solid rgb(0, 143, 17);
-    height: 400px;
+    height: 390px;
     width: 850px;
     margin: 50px auto;
     position: relative;
-    background:white;
+    color:white;
+    
    }
    .goalGrid {
     display: grid;
     float: right;
+    
    }
    .goal {
     border: inset rgb(0, 255, 65) 5px;
@@ -249,6 +319,7 @@ a{
     /* font-family: Ruslan Display; */
     height: 98px;
     width: 55px;
+    
     
    }
 
@@ -280,3 +351,56 @@ a{
     z-index: 2;
     
 }
+canvas {
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 795px;
+    height:390px;
+    opacity:.5;
+  }
+
+ 
+  /* courtesy of http://jsbin.com/zunaxuyida/edit?html,css,js,output */
+  .circle{
+    animation:rotate 2s infinite;
+     display: inline-block;
+     width:30px;
+     height:30px;
+   }
+   .circle:before{
+     content:'';
+     position:absolute;
+     width:10px;
+     height:10px;
+     border:10px solid transparent;
+     border-top-color:rgb(0, 255, 65);
+     border-right-color:rgb(0, 255, 65);
+     transform:rotate(-45deg);
+     border-radius:50%;
+     animation:rotate 2s infinite reverse linear;
+     
+   }
+   
+   .circle:after{
+   content:'';
+     position:absolute;
+     width:10px;
+     height:10px;
+     border:10px solid transparent;
+     border-bottom-color:rgb(0, 143, 17);
+     border-left-color:rgb(0, 143, 17);
+     transform:rotate(-45deg);
+     border-radius:50%;
+     animation:rotate 2s infinite linear;
+   }
+   
+   @keyframes rotate{
+     0%{
+       transform:rotate(-45deg)
+     }
+     100%{
+           transform:rotate(315deg)
+     }
