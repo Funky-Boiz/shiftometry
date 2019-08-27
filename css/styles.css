@@ -44,21 +44,7 @@ a{
 }
 
 
-
-
 /* courtesy of https://codepen.io/mohaiman/pen/MQqMyo */
-/* .area{
-    background: rgb(13, 2, 8);  
-    background: -webkit-linear-gradient(to left, rgb(0, 59, 0), rgb(0, 143, 17));  
-    width: 100%;
-    height:100vh;
-      
-    
-} */
-
-
-
-
 
 
 .circles{
@@ -66,8 +52,9 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 125%;
     overflow: hidden;
+
 }
 
 .circles li{
@@ -76,9 +63,10 @@ a{
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(0, 255, 65, 0.5);
+    /* background: rgba(0, 255, 65, 0.5); */
     animation: animate 25s linear infinite;
     bottom: -150px;
+    /* border:10px inset rgba(0, 255, 65, 0.5); */
     
 }
 
@@ -87,6 +75,7 @@ a{
     width: 80px;
     height: 80px;
     animation-delay: 0s;
+    border:7px inset rgba(0, 255, 65, 0.5);
 }
 
 
@@ -96,6 +85,7 @@ a{
     height: 20px;
     animation-delay: 2s;
     animation-duration: 12s;
+    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(3){
@@ -103,6 +93,7 @@ a{
     width: 20px;
     height: 20px;
     animation-delay: 4s;
+    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(4){
@@ -111,6 +102,7 @@ a{
     height: 60px;
     animation-delay: 0s;
     animation-duration: 18s;
+    border:5px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(5){
@@ -118,20 +110,31 @@ a{
     width: 20px;
     height: 20px;
     animation-delay: 0s;
+    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(6){
     left: 75%;
-    width: 110px;
-    height: 110px;
+    /* width: 110px;
+    height: 110px; */
     animation-delay: 3s;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 75px solid rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(7){
     left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
+    /* width: 150px;
+    height: 150px; */
+    animation-delay: 15s;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 150px solid rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(8){
@@ -140,6 +143,7 @@ a{
     height: 25px;
     animation-delay: 15s;
     animation-duration: 45s;
+    border:4px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(9){
@@ -148,6 +152,7 @@ a{
     height: 15px;
     animation-delay: 2s;
     animation-duration: 35s;
+    border:2px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(10){
@@ -156,6 +161,19 @@ a{
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
+    border:10px inset rgba(0, 255, 65, 0.5);
+
+}
+.circles li:nth-child(11){
+    left: 15%;
+    /* width: 150px;
+    height: 150px; */
+    animation-delay: 7s;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 37.5px solid rgba(0, 255, 65, 0.5);
 }
 
 
@@ -169,10 +187,9 @@ a{
     }
 
     100%{
-        transform: translateY(-1000px) rotate(720deg);
+        transform: translateY(-1100px) rotate(720deg);
         opacity: 1;
         border-radius: 0;
     }
 
 }
-

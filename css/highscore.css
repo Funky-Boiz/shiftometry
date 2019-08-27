@@ -192,5 +192,23 @@ a{
     color:rgb(13, 2, 8);
     text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
      /* list-style-type: square; */
+     z-index:1;
 }
+
+canvas {
+  
+    position: absolute;
+    top: 0;
+    left: 35%;
+    background-color: black;
+    width: 35%;
+    height: 500px;
+    opacity:.5;
+    margin: 30px auto;
+    text-align: center;
+    top:285px;
+    left:495px;
+    z-index:3
+
+  }
 

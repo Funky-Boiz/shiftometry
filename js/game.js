@@ -169,7 +169,7 @@ function topFive(){
 loadHighScore();
 scoreAndAttemptsOnPage();
 // randomShapeGenerator();
-movingRight();
+// movingRight();
 
 document.addEventListener('keydown', logKey);
 
