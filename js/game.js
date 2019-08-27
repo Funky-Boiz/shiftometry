@@ -150,7 +150,7 @@ function gameOver(){
 
 function loadHighScore(){
   var loadedScore = JSON.parse(localStorage.getItem('scores'));
-  if(loadedScore.length){
+  if(loadedScore){
     highScore = loadedScore;
   }
 }
