@@ -2,16 +2,30 @@
 
 var block = document.getElementById('shape');
 var gameWindow = document.getElementById('gameWindow');
-var squareGoal = document.getElementById('squareGoal');
-var circleGoal = document.getElementById('circleGoal');
-var triangleGoal = document.getElementById('triangleGoal');
-var hexagonGoal = document.getElementById('hexagonGoal');
-var score = 0;
+var tryAgain = document.getElementById('try-again');
+var overlay = document.getElementById('overlay');
+var input = document.getElementById('name-input');
+var tryAgainButton = document.getElementById('try-again-button');
+var elScore = document.getElementById('score');
+var elAttempts = document.getElementById('attempts');
 
-var highScore = [];
+//scaling difficulties
+var level = 1;
+var toNextLevel = 1;
+
+var score = 0;
+var username = '';
+
 
 var attempts = 3;
 
+var groupedScores = [];
+
+function PeopleScores(name, scores){
+  this.name = name;
+  this.scores = scores;
+  groupedScores.push(this);
+}
 
 //position of moving block shape
 var pos = {
@@ -24,7 +38,8 @@ function movingRight(){
   if (pos.x < 770){
     requestAnimationFrame(movingRight);
     var x = pos.x;
-    pos.x = x + 4;
+    checkIfLevelUp();
+    pos.x = x + level;
     block.style.left = pos.x + 'px';
   }
   else {
@@ -75,20 +90,32 @@ function logKey(e) {
   }
 }
 
+function checkIfLevelUp(){
+  if (toNextLevel > 3) {
+    level++;
+    toNextLevel = 1;
+    console.log(level);
+  }
+}
+
 function checkIfCorrect(){
   if (pos.y <= 55 && pos.y >= 5 && block.className === 'circle'){
     score+=100;
+    toNextLevel++;
   }
   else if(pos.y <= 155 && pos.y >= 105 && block.className === 'square'){
     score+=100;
+    toNextLevel++;
     console.log('square');
   }
   else if(pos.y <= 255 && pos.y >= 205 && block.className === 'triangle'){
     score+=100;
+    toNextLevel++;
     console.log('triangle');
   }
   else if(pos.y <= 355 && pos.y >= 305 && block.className === 'hexagon'){
     score+=100;
+    toNextLevel++;
     console.log('hexamex');
   }
   else {
@@ -133,47 +160,81 @@ function randomShapeGenerator(){
 }
 
 function scoreAndAttemptsOnPage(){
-  var elScore = document.getElementById('score');
-  var elAttempts = document.getElementById('attempts');
-
   elScore.textContent = 'Score: ' + score;
   elAttempts.textContent ='Attempts: ' + attempts;
 }
 
+
 function gameOver(){
-  alert('WRONG BITCH, TRY AGAIN');
-  highScore.push(score);
-  score = 0;
-  attempts = 3;
+  scoreAndAttemptsOnPage();
+  tryAgainScreen();
   saveHighScores();
+  attempts = 3;
 }
 
 function loadHighScore(){
   var loadedScore = JSON.parse(localStorage.getItem('scores'));
   if(loadedScore){
-    highScore = loadedScore;
-  }
-}
-
-function topFive(){
-  for(var i = 0; i < highScore.length; i++){
-    if(score > highScore[i]){
-      highScore.push(score);
-    }
+    groupedScores = loadedScore;
   }
 }
 
 
+function nameInputScreen(){
+  overlay.classList.toggle('hidden');
+}
+
+function startGame(e){
+  e.preventDefault();
+  username = e.target.username.value;
+  nameInputScreen();
+  randomShapeGenerator();
+  block = document.getElementById('shape');
+  pos.x = 30;
+  pos.y = 180;
+  movingRight();
+  console.log(username);
+}
+
+function tryAgainScreen(){
+  tryAgain.classList.toggle('hidden');
+  var tryAgainScore = document.getElementById('try-again-score');
+  tryAgainScore.textContent = score;
+}
+
+function resetGame(e){
+  e.preventDefault();
+  tryAgain.classList.toggle('hidden');
+  overlay.classList.toggle('hidden');
+  score = 0;
+  elScore.textContent = 'Score: ' + score;
+  attempts = 3;
+  elAttempts.textContent ='Attempts: ' + attempts;
+  input.reset();
+}
+
+
+
+
+function organizedHighScore(){
+  var highestLowest = groupedScores;
+  highestLowest.sort(function(a, b) {
+    return b.scores - a.scores;
+  });
+  return highestLowest;
+}
 
 
 loadHighScore();
 scoreAndAttemptsOnPage();
-// randomShapeGenerator();
-movingRight();
 
+input.addEventListener('submit', startGame);
 document.addEventListener('keydown', logKey);
+tryAgainButton.addEventListener('submit', resetGame);
 
 function saveHighScores(){
-  var storeScores = JSON.stringify(highScore);
+  new PeopleScores(username, score);
+  organizedHighScore();
+  var storeScores = JSON.stringify(groupedScores);
   localStorage.setItem('scores', storeScores);
 }
