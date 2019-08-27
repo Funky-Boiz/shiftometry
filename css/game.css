@@ -255,7 +255,7 @@ a{
    } */
    
 
-   .triangle{
+.triangle{
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
@@ -264,14 +264,14 @@ a{
 
    }
    /* hexagon built from https://css-tricks.com/the-shapes-of-css/ */
-   .hexagon {
+.hexagon {
     width: 25px;
     height: 20px;
-    background: red;
+    background: rgb(0, 143, 17);
     position: relative;
     
    }
-   .hexagon:before {
+.hexagon:before {
     content: "";
     position: absolute;
     bottom: 20px;
@@ -280,9 +280,9 @@ a{
     height: 0;
     border-left: 13px solid transparent;
     border-right: 12px solid transparent;
-    border-bottom: 8px solid red;
+    border-bottom: 8px solid rgb(0, 143, 17);
    }
-   .hexagon:after {
+.hexagon:after {
     content: "";
     position: absolute;
     bottom: -20px;
@@ -292,14 +292,15 @@ a{
     height: 0px;
     border-left: 13px solid transparent;
     border-right: 12px solid transparent;
-    border-top: 8px solid red;
+    border-top: 8px solid rgb(0, 143, 17);
    }
-   #shape {
+#shape {
     position: absolute;
     top: 180px;
     left:30px;
+    transition: 200ms top;
    }
-   #gameWindow {
+#gameWindow {
     border: 5px solid rgb(0, 143, 17);
     height: 390px;
     width: 850px;
@@ -308,12 +309,12 @@ a{
     color:white;
     
    }
-   .goalGrid {
+.goalGrid {
     display: grid;
     float: right;
     
    }
-   .goal {
+.goal {
     border: inset rgb(0, 255, 65) 5px;
     box-sizing:border-box;
     /* font-family: Ruslan Display; */
@@ -322,8 +323,7 @@ a{
     
     
    }
-
-   #score{
+#score{
        background: rgb(13, 2, 8);
        font-family: Ruslan Display;
        text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
@@ -337,7 +337,7 @@ a{
        z-index: 2;
    }
    
-   #attempts{
+#attempts{
     background: rgb(13, 2, 8);
     font-family: Ruslan Display;
     font-size: 25px;
@@ -360,17 +360,17 @@ canvas {
     width: 795px;
     height:390px;
     opacity:.5;
-  }
+}
 
  
   /* courtesy of http://jsbin.com/zunaxuyida/edit?html,css,js,output */
-  .circle{
+.circle{
     animation:rotate 2s infinite;
      display: inline-block;
      width:30px;
      height:30px;
-   }
-   .circle:before{
+}
+.circle:before{
      content:'';
      position:absolute;
      width:10px;
@@ -382,9 +382,9 @@ canvas {
      border-radius:50%;
      animation:rotate 2s infinite reverse linear;
      
-   }
+}
    
-   .circle:after{
+.circle:after{
    content:'';
      position:absolute;
      width:10px;
@@ -395,12 +395,21 @@ canvas {
      transform:rotate(-45deg);
      border-radius:50%;
      animation:rotate 2s infinite linear;
-   }
+}
    
-   @keyframes rotate{
+@keyframes rotate{
      0%{
        transform:rotate(-45deg)
      }
      100%{
            transform:rotate(315deg)
      }
+}
+
+#overlay, #try-again {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+
+    
+}

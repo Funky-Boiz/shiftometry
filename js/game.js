@@ -10,7 +10,7 @@ var elScore = document.getElementById('score');
 var elAttempts = document.getElementById('attempts');
 
 //scaling difficulties
-var level = 1;
+var level = 2;
 var toNextLevel = 1;
 
 var score = 0;
@@ -62,14 +62,14 @@ function movingRight(){
 }
 //movement vertically
 function movingUp(){
-  if (pos.y > 6){
-    pos.y -= 25;
+  if (pos.y > 36){
+    pos.y -= 50;
     block.style.top = pos.y + 'px';
   }
 }
 function movingDown(){
-  if (pos.y < 354){
-    pos.y += 25;
+  if (pos.y < 324){
+    pos.y += 50;
     block.style.top = pos.y + 'px';
   }
 }
@@ -199,7 +199,7 @@ function startGame(e){
 function tryAgainScreen(){
   tryAgain.classList.toggle('hidden');
   var tryAgainScore = document.getElementById('try-again-score');
-  tryAgainScore.textContent = score;
+  tryAgainScore.textContent = 'Score: ' + score;
 }
 
 function resetGame(e){
@@ -221,6 +221,9 @@ function organizedHighScore(){
   highestLowest.sort(function(a, b) {
     return b.scores - a.scores;
   });
+  if( highestLowest.length > 5){
+    highestLowest.pop();
+  }
   return highestLowest;
 }
 
