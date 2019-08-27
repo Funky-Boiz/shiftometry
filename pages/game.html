@@ -36,10 +36,26 @@
             <div id = "spin"></div>
             <section>
                 <section id="gameWindow">
+                  
                     <div></div>
                     <div id="shape" class="square"></div>
                     <div class="goalGrid">
                             <canvas id=c></canvas>
+
+                    <div id="overlay">
+                      <form id="name-input">
+                          <input type="text" name="username" required placeholder="please enter name">
+                          <button type="submit">Start Game</button>
+                      </form>
+                    </div>
+                    <div id="try-again" class="hidden">
+                      <form id="try-again-button">
+                          <h3 id="try-again-score"></h3>
+                          <button type="submit">Try Again</button>
+                      </form>
+                   </div>
+                        <div class="goalGrid">
+
                         <div id="circleGoal" class="goal">circle</div>
                         <div id="squareGoal" class="goal">square</div>
                         <div id="triangleGoal" class="goal">triangle</div>
