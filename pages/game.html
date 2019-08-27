@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SHIFTOMETRY</title>
+        <link rel = "stylesheet"  type = "text/css" href = "/css/reset.css" />
+        <link rel = "stylesheet"  type = "text/css" href = "/css/game.css" />
+        <link href="https://fonts.googleapis.com/css?family=Ruslan+Display&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+     <header>
+         <h1>Shiftometry</h1>
+         <div id = "game-button">
+             <p class = "buttons"><a href = "/index.html">Home Page</a></p>
+             <p class = "buttons"><a href = "/pages/highscore.html">HighScores</a></p>
+         </div>               
+
+     </header>
+        <main>
+            <div class="area" >
+                <ul class="circles">
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li><div class = "triangle"><div class = "inner-triangle"></div></div></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                        <li class = "circle2"></li>
+                </ul>
+            </div>
+            <div id = "spin"></div>
+            <section>
+                <section id="gameWindow">
+                  
+                    <div></div>
+                    <div id="shape" class="square"></div>
+                    <div class="goalGrid">
+                            <canvas id=c></canvas>
+
+                    <div id="overlay">
+                      <form id="name-input">
+                          <input type="text" name="username" required placeholder="please enter name">
+                          <button type="submit">Start Game</button>
+                      </form>
+                    </div>
+                    <div id="try-again" class="hidden">
+                      <form id="try-again-button">
+                          <h3 id="try-again-score"></h3>
+                          <button type="submit">Try Again</button>
+                      </form>
+                   </div>
+                        <div class="goalGrid">
+
+                        <div id="circleGoal" class="goal">circle</div>
+                        <div id="squareGoal" class="goal">square</div>
+                        <div id="triangleGoal" class="goal">triangle</div>
+                        <div id="hexagonGoal" class="goal">hexagon</div>
+                    </div>
+              </section>
+              <h3 id="score"></h3>
+              <h3 id="attempts"></h3>
+            </section>
+        </main>
+        
+        <script src="/js/game.js"></script>
+        <script src="/js/gamewindow.js"></script>
+    </body>
+    
+</html>
