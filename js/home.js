@@ -5,7 +5,7 @@ function displayScores(){
   if(storageScores){
     for(var i = 0; i < storageScores.length; i++){
       var li = document.createElement('li');
-      li.textContent = storageScores[i];
+      li.textContent = storageScores[i].name + ': ' + storageScores[i].scores;
       elScores.appendChild(li);
     }
   }

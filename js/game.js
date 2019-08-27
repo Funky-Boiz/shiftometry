@@ -2,22 +2,26 @@
 
 var block = document.getElementById('shape');
 var gameWindow = document.getElementById('gameWindow');
-var squareGoal = document.getElementById('squareGoal');
-var circleGoal = document.getElementById('circleGoal');
-var triangleGoal = document.getElementById('triangleGoal');
-var hexagonGoal = document.getElementById('hexagonGoal');
 var tryAgain = document.getElementById('try-again');
 var overlay = document.getElementById('overlay');
 var input = document.getElementById('name-input');
 var tryAgainButton = document.getElementById('try-again-button');
+var elScore = document.getElementById('score');
+var elAttempts = document.getElementById('attempts');
 
 var score = 0;
 var username = '';
 
-var highScore = [];
 
 var attempts = 3;
 
+var groupedScores = [];
+
+function PeopleScores(name, scores){
+  this.name = name;
+  this.scores = scores;
+  groupedScores.push(this);
+}
 
 //position of moving block shape
 var pos = {
@@ -139,34 +143,22 @@ function randomShapeGenerator(){
 }
 
 function scoreAndAttemptsOnPage(){
-  var elScore = document.getElementById('score');
-  var elAttempts = document.getElementById('attempts');
-
   elScore.textContent = 'Score: ' + score;
   elAttempts.textContent ='Attempts: ' + attempts;
 }
 
+
 function gameOver(){
   scoreAndAttemptsOnPage();
   tryAgainScreen();
-  highScore.push(score);
-  score = 0;
-  attempts = 3;
   saveHighScores();
+  attempts = 3;
 }
 
 function loadHighScore(){
   var loadedScore = JSON.parse(localStorage.getItem('scores'));
   if(loadedScore){
-    highScore = loadedScore;
-  }
-}
-
-function topFive(){
-  for(var i = 0; i < highScore.length; i++){
-    if(score > highScore[i]){
-      highScore.push(score);
-    }
+    groupedScores = loadedScore;
   }
 }
 
@@ -177,8 +169,12 @@ function nameInputScreen(){
 
 function startGame(e){
   e.preventDefault();
-  username = e.target.name.value;
+  username = e.target.username.value;
   nameInputScreen();
+  randomShapeGenerator();
+  block = document.getElementById('shape');
+  pos.x = 30;
+  pos.y = 180;
   movingRight();
   console.log(username);
 }
@@ -189,20 +185,39 @@ function tryAgainScreen(){
   tryAgainScore.textContent = score;
 }
 
-function resetGame(){
+function resetGame(e){
+  e.preventDefault();
   tryAgain.classList.toggle('hidden');
   overlay.classList.toggle('hidden');
+  score = 0;
+  elScore.textContent = 'Score: ' + score;
+  attempts = 3;
+  elAttempts.textContent ='Attempts: ' + attempts;
+  input.reset();
 }
+
+
+
+
+function organizedHighScore(){
+  var highestLowest = groupedScores;
+  highestLowest.sort(function(a, b) {
+    return b.scores - a.scores;
+  });
+  return highestLowest;
+}
+
 
 loadHighScore();
 scoreAndAttemptsOnPage();
-// randomShapeGenerator();
 
 input.addEventListener('submit', startGame);
 document.addEventListener('keydown', logKey);
 tryAgainButton.addEventListener('submit', resetGame);
 
 function saveHighScores(){
-  var storeScores = JSON.stringify(highScore);
+  new PeopleScores(username, score);
+  organizedHighScore();
+  var storeScores = JSON.stringify(groupedScores);
   localStorage.setItem('scores', storeScores);
 }
