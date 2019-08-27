@@ -6,7 +6,13 @@ var squareGoal = document.getElementById('squareGoal');
 var circleGoal = document.getElementById('circleGoal');
 var triangleGoal = document.getElementById('triangleGoal');
 var hexagonGoal = document.getElementById('hexagonGoal');
+var tryAgain = document.getElementById('try-again');
+var overlay = document.getElementById('overlay');
+var input = document.getElementById('name-input');
+var tryAgainButton = document.getElementById('try-again-button');
+
 var score = 0;
+var username = '';
 
 var highScore = [];
 
@@ -141,7 +147,8 @@ function scoreAndAttemptsOnPage(){
 }
 
 function gameOver(){
-  alert('WRONG BITCH, TRY AGAIN');
+  scoreAndAttemptsOnPage();
+  tryAgainScreen();
   highScore.push(score);
   score = 0;
   attempts = 3;
@@ -164,14 +171,36 @@ function topFive(){
 }
 
 
+function nameInputScreen(){
+  overlay.classList.toggle('hidden');
+}
 
+function startGame(e){
+  e.preventDefault();
+  username = e.target.name.value;
+  nameInputScreen();
+  movingRight();
+  console.log(username);
+}
+
+function tryAgainScreen(){
+  tryAgain.classList.toggle('hidden');
+  var tryAgainScore = document.getElementById('try-again-score');
+  tryAgainScore.textContent = score;
+}
+
+function resetGame(){
+  tryAgain.classList.toggle('hidden');
+  overlay.classList.toggle('hidden');
+}
 
 loadHighScore();
 scoreAndAttemptsOnPage();
 // randomShapeGenerator();
-movingRight();
 
+input.addEventListener('submit', startGame);
 document.addEventListener('keydown', logKey);
+tryAgainButton.addEventListener('submit', resetGame);
 
 function saveHighScores(){
   var storeScores = JSON.stringify(highScore);
