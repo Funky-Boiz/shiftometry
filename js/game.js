@@ -160,7 +160,13 @@ function checkIfCorrect(array){
   else {
     attempts--;
     score-=25;
+    playAvery();
   }
+}
+
+function playAvery(){
+  var avery = document.getElementById('avery');
+  avery.play();
 }
 
 function randomShapeGenerator(){
