@@ -16,9 +16,9 @@
              <p class = "buttons"><a href = "/pages/highscore.html">HighScores</a></p>
              <p class = "buttons"><a href = "/pages/AboutGame.html">About Us</a></p>
          </div>               
-
      </header>
         <main>
+            <!-- see CSS for source -->
             <div class="area" >
                 <ul class="circles">
                         <li class = "circle2"></li>
@@ -26,7 +26,9 @@
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
-                        <li><div class = "triangle"><div class = "inner-triangle"></div></div></li>
+                        <li><div class = "triangle">
+                            <!-- <div class = "inner-triangle"></div></div> -->
+                        </li>
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
                         <li class = "circle2"></li>
@@ -35,6 +37,7 @@
                 </ul>
             </div>
             <div id = "spin"></div>
+            
             <section>
                 <section id="gameWindow">
                   
@@ -57,17 +60,29 @@
                    </div>
                         <div class="goalGrid">
 
-                        <div id="circleGoal" class="goal">circle</div>
-                        <div id="squareGoal" class="goal">square</div>
-                        <div id="triangleGoal" class="goal">triangle</div>
-                        <div id="hexagonGoal" class="goal">hexagon</div>
+                        <div id="goal1" class="goal">circle</div>
+                        <div id="goal2" class="goal">square</div>
+                        <div id="goal3" class="goal">triangle</div>
+                        <div id="goal4" class="goal">hexagon</div>
                     </div>
               </section>
+              
+              <h3 id="difficultyText"></h3>
               <h3 id="score"></h3>
               <h3 id="attempts"></h3>
+              <form id="hardMode">
+                  <button id = "hard" type="submit">Hard Mode</button>
+                </form>
+                <form id="normal" id="normalMode" class="hidden">
+                    <button type="submit">Normal Mode</button>
+                </form>
             </section>
         </main>
-        
+        <footer>
+            &copy;2019 Funky Boiz
+            <audio id="avery" src="/assets/sounds/Avery oooooofffff-[AudioTrimmer.com].mp3"></audio>
+            <audio id="backgroundMusic" src="/assets/sounds/babbys_first_audio_file.mp3" autoplay loop></audio>
+        </footer>
         <script src="/js/game.js"></script>
         <script src="/js/gamewindow.js"></script>
     </body>
