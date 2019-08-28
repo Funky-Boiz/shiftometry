@@ -1,4 +1,6 @@
-
+/* *{
+    outline: 1px solid orange;
+} */
 h1{
     text-align: center;
     font-size: 100px;  
@@ -572,11 +574,13 @@ input{
     text-align: center;
     position:relative;
     left:45%;
+    width:175px;
 }
 #normal {
-    margin: 15px auto;
+    
     text-align: center;
     position:relative;
+   
 }
 footer{
     color: white;
