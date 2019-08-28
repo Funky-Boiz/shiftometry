@@ -573,6 +573,11 @@ input{
     position:relative;
     left:45%;
 }
+#normal {
+    margin: 15px auto;
+    text-align: center;
+    position:relative;
+}
 footer{
     color: white;
     float: right;

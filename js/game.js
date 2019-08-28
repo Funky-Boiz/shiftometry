@@ -7,7 +7,7 @@ var overlay = document.getElementById('overlay');
 var input = document.getElementById('name-input');
 var tryAgainButton = document.getElementById('try-again-button');
 var hardModeButton = document.getElementById('hardMode');
-var normalModeButton = document.getElementById('normalMode');
+var normalModeButton = document.getElementById('normal');
 var difficultyText = document.getElementById('difficultyText');
 var elScore = document.getElementById('score');
 var elAttempts = document.getElementById('attempts');
@@ -309,7 +309,7 @@ input.addEventListener('submit', startGame);
 document.addEventListener('keydown', logKey);
 tryAgainButton.addEventListener('submit', resetGame);
 hardModeButton.addEventListener('submit', setHardMode);
-normalModeButton.addEventListener('submit', setNormalMode)
+normalModeButton.addEventListener('submit', setNormalMode);
 
 
 
