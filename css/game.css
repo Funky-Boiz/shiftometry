@@ -1,3 +1,7 @@
+/* *{
+    outline: orange 1px dotted;
+} */
+
 
 h1{
     text-align: center;
@@ -50,6 +54,8 @@ a{
 
 
 
+
+
 /* courtesy of https://codepen.io/mohaiman/pen/MQqMyo */
 
 
@@ -58,9 +64,9 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    height: 125%;
+    height: 155%;
     overflow: hidden;
-
+    z-index: -1;
 }
 
 .circles li{
@@ -331,13 +337,13 @@ a{
     
    }
 #score{
-       background: rgb(13, 2, 8);
+
        font-family: Ruslan Display;
        text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
        font-size: 25px;
        text-align: center;
        width: 35%;
-       margin: 30px auto;
+       margin: 15px auto;
        padding-top:10px;
        padding-bottom:10px;
        text-align: center;
@@ -345,19 +351,34 @@ a{
    }
    
 #attempts{
-    background: rgb(13, 2, 8);
+
     font-family: Ruslan Display;
     font-size: 25px;
     text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
     text-align: center;
     width: 35%;
-    margin: 30px auto;
+    margin: 15px auto;
     padding-top:10px;
     padding-bottom:10px;
     text-align: center;
     z-index: 2;
     
 }
+
+#difficultyText{
+
+    font-family: Ruslan Display;
+    font-size: 25px;
+    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    text-align: center;
+    width: 35%;
+    margin: 15px auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+    z-index: 2;
+}
+
 canvas {
   
     position: absolute;
@@ -369,6 +390,16 @@ canvas {
     opacity:.5;
 }
 
+#difficulty {
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+#difficulty button {
+    margin: auto;
+}
  
   /* courtesy of http://jsbin.com/zunaxuyida/edit?html,css,js,output */
 .circle{
@@ -461,6 +492,10 @@ canvas {
 
 }
 
+
+
+
+
 input{
     color:rgb(13, 2, 8);
     background-color: rgb(13, 2, 8);
@@ -515,4 +550,14 @@ input{
     transition: 350ms;
     cursor: pointer;
 
+}
+#diffculty{
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer{
+    color: white;
+    float: right;
 }

@@ -6,6 +6,9 @@ var tryAgain = document.getElementById('try-again');
 var overlay = document.getElementById('overlay');
 var input = document.getElementById('name-input');
 var tryAgainButton = document.getElementById('try-again-button');
+var hardModeButton = document.getElementById('hardMode');
+var normalModeButton = document.getElementById('normalMode');
+var difficultyText = document.getElementById('difficultyText');
 var elScore = document.getElementById('score');
 var elAttempts = document.getElementById('attempts');
 
@@ -19,10 +22,11 @@ var toNextLevel = 1;
 var score = 0;
 var username = '';
 
-
 var attempts = 3;
-
 var groupedScores = [];
+
+var difficulty = 1;
+var currentGoalArray = Array.from(goals);
 
 function PeopleScores(name, scores){
   this.name = name;
@@ -36,6 +40,37 @@ var pos = {
   y: 180,
 };
 
+function selectDifficulty(){
+  if (difficulty === 1){
+    //set normal mode
+    currentGoalArray = Array.from(goals);
+  }
+  else if (difficulty === 2){
+    currentGoalArray = generateRandomGoal();
+  }
+  else if (difficulty === 3){
+    //set harder mode
+  }
+}
+
+function setHardMode(e){
+  e.preventDefault();
+  difficulty = 2;
+  console.log(difficulty);
+  hardModeButton.classList.toggle('hidden');
+  normalModeButton.classList.toggle('hidden');
+  difficultyText.textContent = 'Mode: Hard';
+}
+
+function setNormalMode(e){
+  e.preventDefault();
+  difficulty = 1;
+  console.log(difficulty);
+  hardModeButton.classList.toggle('hidden');
+  normalModeButton.classList.toggle('hidden');
+  difficultyText.textContent = 'Mode: Normal';
+}
+
 //move block shape to the right and remove when it hits the end
 function movingRight(){
   if (pos.x < 770){
@@ -48,10 +83,10 @@ function movingRight(){
   else {
     // block.id = '';
     checkIfCorrect(currentGoalArray);
+    selectDifficulty();
     gameWindow.removeChild(block);
     if(attempts > 0){
       randomShapeGenerator();
-      currentGoalArray = generateRandomGoal();
       block = document.getElementById('shape');
       pos.x = 30;
       pos.y = 180;
@@ -253,14 +288,23 @@ function saveHighScores(){
   localStorage.setItem('scores', storeScores);
 }
 
+function setVolume(){
+  var backgroundMusic = document.getElementById('backgroundMusic');
+  backgroundMusic.volume = 0.4;
+}
+
+setVolume();
 loadHighScore();
-var currentGoalArray = generateRandomGoal();
 scoreAndAttemptsOnPage();
+difficultyText.textContent = 'Mode: Normal';
 
 
 input.addEventListener('submit', startGame);
 document.addEventListener('keydown', logKey);
 tryAgainButton.addEventListener('submit', resetGame);
+hardModeButton.addEventListener('submit', setHardMode);
+normalModeButton.addEventListener('submit', setNormalMode)
+
 
 
 window.addEventListener('keydown', function(e){
