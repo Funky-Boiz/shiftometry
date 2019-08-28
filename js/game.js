@@ -53,6 +53,15 @@ function selectDifficulty(){
   }
 }
 
+function toggleDifficultyButton(){
+  if(difficulty === 1){
+    hardModeButton.classList.toggle('hidden');
+  }
+  if(difficulty === 2){
+    normalModeButton.classList.toggle('hidden');
+  }
+}
+
 function setHardMode(e){
   e.preventDefault();
   difficulty = 2;
@@ -60,6 +69,7 @@ function setHardMode(e){
   hardModeButton.classList.toggle('hidden');
   normalModeButton.classList.toggle('hidden');
   difficultyText.textContent = 'Mode: Hard';
+  normalModeButton.removeEventListener();
 }
 
 function setNormalMode(e){
@@ -171,7 +181,7 @@ function playAvery(){
 
 function randomShapeGenerator(){
   var randomNumber = Math.floor(Math.random() * 4) + 1;
- 
+
   switch (randomNumber){
   case 1:
     //generate circle
@@ -216,6 +226,7 @@ function gameOver(){
   tryAgainScreen();
   saveHighScores();
   attempts = 3;
+  toggleDifficultyButton();
 }
 
 function loadHighScore(){
@@ -232,6 +243,7 @@ function nameInputScreen(){
 
 function startGame(e){
   e.preventDefault();
+  toggleDifficultyButton();
   username = e.target.username.value;
   nameInputScreen();
   randomShapeGenerator();
@@ -299,6 +311,11 @@ function setVolume(){
   backgroundMusic.volume = 0.4;
 }
 
+function turnOffButtons(){
+  normalModeButton.e.preventDefault();
+  hardModeButton.e.preventDefault();
+}
+
 setVolume();
 loadHighScore();
 scoreAndAttemptsOnPage();
@@ -310,6 +327,7 @@ document.addEventListener('keydown', logKey);
 tryAgainButton.addEventListener('submit', resetGame);
 hardModeButton.addEventListener('submit', setHardMode);
 normalModeButton.addEventListener('submit', setNormalMode);
+
 
 
 
