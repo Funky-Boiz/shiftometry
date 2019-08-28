@@ -301,26 +301,31 @@ a{
     transition: 200ms top;
    }
 #gameWindow {
-    border: 5px solid rgb(0, 143, 17);
+    border: 5px groove rgb(0, 143, 17);
     height: 390px;
     width: 850px;
     margin: 50px auto;
     position: relative;
-    color:white;
+    
     
    }
 .goalGrid {
     display: grid;
     float: right;
+
     
    }
 .goal {
     border: inset rgb(0, 255, 65) 5px;
+    color: rgb(13, 2, 8);
+    font-size:20px;
     box-sizing:border-box;
-    /* font-family: Ruslan Display; */
+    font-family: Ruslan Display;
+    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
     height: 98px;
     width: 55px;
-    
+    padding-top:50%;
+    padding-left:5px;
     
    }
 #score{
@@ -408,8 +413,62 @@ canvas {
 
 #overlay, #try-again {
     position: absolute;
-    top: 40%;
-    left: 35%;
+    top: 35%;
+    left: 20%;
+}
 
-    
+input{
+    color:rgb(13, 2, 8);
+    background-color: rgb(13, 2, 8);
+    border: 2px inset rgb(0, 143, 17);
+    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    box-shadow: 
+    0 0 0 2px rgb(13, 2, 8),
+    0 0 0 3px rgb(0, 255, 65),
+    0 0 0 4px rgb(13, 2, 8),
+    0 0 0 5px rgb(0, 143, 17),
+    0 0 0 6px rgb(13, 2, 8);
+    font-size:20px;
+    font-family: Ruslan Display;
+    height:30px;
+    padding-left:10px;
+
+}
+
+/* courtousy of w3schools.com */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(13, 2, 8);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(13, 2, 8);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(13, 2, 8);
+  }
+
+  button{
+    color:rgb(13, 2, 8);
+    background-color: rgb(13, 2, 8);
+    border: 2px inset rgb(0, 143, 17);
+    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    box-shadow: 
+    0 0 0 2px rgb(13, 2, 8),
+    0 0 0 3px rgb(0, 255, 65),
+    0 0 0 4px rgb(13, 2, 8),
+    0 0 0 5px rgb(0, 143, 17),
+    0 0 0 6px rgb(13, 2, 8);
+    font-size:20px;
+    font-family: Ruslan Display;
+    height:30px;
+    padding-left:10px;
+    margin-left:10px;
+  }
+  button:hover{
+    box-shadow: inset 0 0 0 15px rgb(0, 143, 17);
+    transition: 350ms;
+    cursor: pointer;
+
 }
