@@ -1,6 +1,6 @@
-/* *{
+*{
     outline: orange 1px dotted;
-} */
+}
 
 
 h1{
@@ -551,12 +551,32 @@ input{
     cursor: pointer;
 
 }
-#diffculty{
-    width: 960px;
-    margin: 0 auto;
-    text-align: center;
-}
+/* #diffculty{
 
+    text-align: center;
+    width: 35%;
+    margin: 15px auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+
+} */
+
+/* #hardmode{
+    text-align: center;
+    width: 35%;
+    margin: 15px auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+} */
+
+#hard {
+    margin: 15px auto;
+    text-align: center;
+    position:relative;
+    left:45%;
+}
 footer{
     color: white;
     float: right;
