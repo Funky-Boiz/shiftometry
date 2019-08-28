@@ -15,9 +15,9 @@
              <p class = "buttons"><a href = "/index.html">Home Page</a></p>
              <p class = "buttons"><a href = "/pages/highscore.html">HighScores</a></p>
          </div>               
-
      </header>
         <main>
+            <!-- see CSS for source -->
             <div class="area" >
                 <ul class="circles">
                         <li class = "circle2"></li>
@@ -36,6 +36,7 @@
                 </ul>
             </div>
             <div id = "spin"></div>
+            
             <section>
                 <section id="gameWindow">
                   
@@ -64,11 +65,24 @@
                         <div id="goal4" class="goal">hexagon</div>
                     </div>
               </section>
+              
+              <h3 id="difficultyText"></h3>
               <h3 id="score"></h3>
               <h3 id="attempts"></h3>
             </section>
+            <section id="difficulty">
+                    <form id="hardMode">
+                        <button type="submit">Hard Mode</button>
+                     </form>
+                    <form id="normalMode" class="hidden">
+                        <button type="submit">Normal Mode</button>
+                     </form>
+            </section>
         </main>
-        
+        <footer>
+            &copy;2019 Funky Boiz
+            <audio id="backgroundMusic" src="/assets/sounds/babbys_first_audio_file.mp3" autoplay loop></audio>
+        </footer>
         <script src="/js/game.js"></script>
         <script src="/js/gamewindow.js"></script>
     </body>
