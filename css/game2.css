@@ -72,11 +72,8 @@ a{
   list-style: none;
   width: 20px;
   height: 20px;
-  /* background: rgba(250, 217, 36, 0.5); */
   animation: animate 25s linear infinite;
   bottom: -150px;
-  /* border:10px inset rgba(250, 217, 36, 0.5); */
-  
 }
 
 .circles li:nth-child(1){
@@ -548,25 +545,6 @@ button:hover{
   cursor: pointer;
 
 }
-/* #diffculty{
-
-  text-align: center;
-  width: 35%;
-  margin: 15px auto;
-  padding-top:10px;
-  padding-bottom:10px;
-  text-align: center;
-
-} */
-
-/* #hardmode{
-  text-align: center;
-  width: 35%;
-  margin: 15px auto;
-  padding-top:10px;
-  padding-bottom:10px;
-  text-align: center;
-} */
 
 #hard {
   margin: 15px auto;

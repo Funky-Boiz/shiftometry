@@ -123,7 +123,7 @@ a{
     border:3px inset rgba(0, 255, 65, 0.5);
 }
 
-/* .circles li .triangle {
+.circles  li:nth-child(6){
     left: 75%;
     animation-delay: 3s;
     width: 0;
@@ -131,15 +131,8 @@ a{
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 75px solid rgba(0, 255, 65, 0.5);
-} */
-.inner-triangle {
-    position:absolute;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 60px solid rgba(0, 255, 65, 0.5);
 }
+
 
 .circles li:nth-child(7){
     left: 35%;
@@ -249,16 +242,7 @@ a{
     90% {transform:rotate(334deg);}
     100% {transform:rotate(360deg);}
   }
-   
-   /* .circle{
-    height: 30px;
-    width: 30px;
-    border: solid black 1px;
-    border-radius: 50%;
-    background:rgb(0, 143, 17);
-   } */
-   
-
+ 
 .triangle{
     width: 0;
     height: 0;
@@ -549,25 +533,6 @@ input{
     cursor: pointer;
 
 }
-/* #diffculty{
-
-    text-align: center;
-    width: 35%;
-    margin: 15px auto;
-    padding-top:10px;
-    padding-bottom:10px;
-    text-align: center;
-
-} */
-
-/* #hardmode{
-    text-align: center;
-    width: 35%;
-    margin: 15px auto;
-    padding-top:10px;
-    padding-bottom:10px;
-    text-align: center;
-} */
 
 #hard {
     margin: 15px auto;
@@ -587,6 +552,3 @@ footer{
     float: right;
 }
 
-#switch{
-
-}

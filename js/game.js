@@ -312,7 +312,7 @@ function switchColors(e) {
   }
   else {
     switch1 = 1;
-    css.href = '/css/game2.css'; 
+    css.href = '/css/game2.css';
   }
 
 }

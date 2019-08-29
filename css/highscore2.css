@@ -6,7 +6,7 @@ h1{
     margin-top:20px;
     margin-bottom:100px;
     color: rgb(13, 2, 8);
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+  text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
 }
 
 main{
@@ -14,7 +14,7 @@ main{
 }
 
 #scoring-table{
-    border: 15px solid rgb(0, 143, 17);
+    border: 15px solid rgb(255, 167, 28);
     width: 35%;
     height: 500px;
     margin: 30px auto;
@@ -31,13 +31,13 @@ main{
     padding:20px;
     font-family: Ruslan Display;
     text-align: center;
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+  text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
     margin-left: 30px;
 
 }
 
 .buttons:hover{
-    box-shadow: inset 0 0 0 15px rgb(0, 143, 17);
+    box-shadow: inset 0 0 0 15px rgb(255, 167, 28);
     transition: 350ms;
     cursor: pointer;
 
@@ -63,7 +63,7 @@ a{
 /* courtesy of https://codepen.io/mohaiman/pen/MQqMyo */
 .area{
     background: rgb(13, 2, 8);  
-    background: -webkit-linear-gradient(to left, rgb(0, 59, 0), rgb(0, 143, 17));  
+    background: -webkit-linear-gradient(to left, rgb(0, 59, 0), rgb(255, 167, 28));  
     width: 100%;
     height:100%;
       
@@ -86,7 +86,7 @@ a{
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(0, 255, 65, 0.5);
+    background: rgba(250, 217, 36, 0.5);
     animation: animate 25s linear infinite;
     bottom: -150px;
     
@@ -192,7 +192,7 @@ a{
     font-family: Ruslan Display;
     font-size:50px;
     color:rgb(13, 2, 8);
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+  text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
      /* list-style-type: square; */
      z-index:1;
 }
@@ -207,18 +207,20 @@ canvas {
     height: 100%;
     opacity:.5;
     margin: 0 auto;
-  }
+    
 
+
+  }
   button{
     color:rgb(13, 2, 8);
     background-color: rgb(13, 2, 8);
-    border: 2px inset rgb(0, 143, 17);
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    border: 2px inset rgb(255, 167, 28);
+    text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
     box-shadow: 
     0 0 0 2px rgb(13, 2, 8),
-    0 0 0 3px rgb(0, 255, 65),
+    0 0 0 3px rgb(250, 217, 36),
     0 0 0 4px rgb(13, 2, 8),
-    0 0 0 5px rgb(0, 143, 17),
+    0 0 0 5px rgb(255, 167, 28),
     0 0 0 6px rgb(13, 2, 8);
     font-size:20px;
     font-family: Ruslan Display;
@@ -227,9 +229,8 @@ canvas {
     margin-left:10px;
   }
   button:hover{
-    box-shadow: inset 0 0 0 15px rgb(0, 143, 17);
+    box-shadow: inset 0 0 0 15px rgb(255, 167, 28);
     transition: 350ms;
     cursor: pointer;
-
-}
-
+  
+  }
