@@ -6,7 +6,21 @@ h1{
     margin-top:20px;
     margin-bottom:100px;
     color: rgb(13, 2, 8);
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+  text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
+}
+
+main{
+    text-align: center;
+}
+
+#scoring-table{
+    border: 15px solid rgb(255, 167, 28);
+    width: 35%;
+    height: 500px;
+    margin: 30px auto;
+    position: relative;
+    text-align: center;
+    z-index: 2;
 }
 
 .buttons{
@@ -16,13 +30,14 @@ h1{
     font-size:50px;
     padding:20px;
     font-family: Ruslan Display;
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    text-align: center;
+  text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
     margin-left: 30px;
 
 }
 
 .buttons:hover{
-    box-shadow: inset 0 0 0 15px rgb(0, 143, 17);
+    box-shadow: inset 0 0 0 15px rgb(255, 167, 28);
     transition: 350ms;
     cursor: pointer;
 
@@ -43,8 +58,17 @@ a{
 }
 
 
-/* courtesy of https://codepen.io/mohaiman/pen/MQqMyo */
 
+
+/* courtesy of https://codepen.io/mohaiman/pen/MQqMyo */
+.area{
+    background: rgb(13, 2, 8);  
+    background: -webkit-linear-gradient(to left, rgb(0, 59, 0), rgb(255, 167, 28));  
+    width: 100%;
+    height:100%;
+      
+    
+}
 
 .circles{
     position: absolute;
@@ -53,7 +77,7 @@ a{
     width: 100%;
     height: 125%;
     overflow: hidden;
-    z-index: -1;
+    z-index:-2;
 }
 
 .circles li{
@@ -62,6 +86,7 @@ a{
     list-style: none;
     width: 20px;
     height: 20px;
+    background: rgba(250, 217, 36, 0.5);
     animation: animate 25s linear infinite;
     bottom: -150px;
     
@@ -72,7 +97,6 @@ a{
     width: 80px;
     height: 80px;
     animation-delay: 0s;
-    border:7px inset rgba(0, 255, 65, 0.5);
 }
 
 
@@ -82,7 +106,6 @@ a{
     height: 20px;
     animation-delay: 2s;
     animation-duration: 12s;
-    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(3){
@@ -90,7 +113,6 @@ a{
     width: 20px;
     height: 20px;
     animation-delay: 4s;
-    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(4){
@@ -99,7 +121,6 @@ a{
     height: 60px;
     animation-delay: 0s;
     animation-duration: 18s;
-    border:5px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(5){
@@ -107,31 +128,20 @@ a{
     width: 20px;
     height: 20px;
     animation-delay: 0s;
-    border:3px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(6){
     left: 75%;
-    /* width: 110px;
-    height: 110px; */
+    width: 110px;
+    height: 110px;
     animation-delay: 3s;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 75px solid rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(7){
     left: 35%;
-    /* width: 150px;
-    height: 150px; */
-    animation-delay: 15s;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 150px solid rgba(0, 255, 65, 0.5);
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
 }
 
 .circles li:nth-child(8){
@@ -140,7 +150,6 @@ a{
     height: 25px;
     animation-delay: 15s;
     animation-duration: 45s;
-    border:4px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(9){
@@ -149,7 +158,6 @@ a{
     height: 15px;
     animation-delay: 2s;
     animation-duration: 35s;
-    border:2px inset rgba(0, 255, 65, 0.5);
 }
 
 .circles li:nth-child(10){
@@ -158,19 +166,6 @@ a{
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
-    border:10px inset rgba(0, 255, 65, 0.5);
-
-}
-.circles li:nth-child(11){
-    left: 15%;
-    /* width: 150px;
-    height: 150px; */
-    animation-delay: 7s;
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 37.5px solid rgba(0, 255, 65, 0.5);
 }
 
 
@@ -180,45 +175,62 @@ a{
     0%{
         transform: translateY(0) rotate(0deg);
         opacity: .8;
-        border-radius: 0;
+        border-radius: 100%;
     }
 
     100%{
-        transform: translateY(-1100px) rotate(720deg);
+        transform: translateY(-1000px) rotate(720deg);
         opacity: 1;
-        border-radius: 0;
+        border-radius: 100%;
     }
 
 }
-button{
+
+#highscore-table li{
+
+    margin-bottom:20px;
+    font-family: Ruslan Display;
+    font-size:50px;
+    color:rgb(13, 2, 8);
+  text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
+     /* list-style-type: square; */
+     z-index:1;
+}
+
+canvas {
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity:.5;
+    margin: 0 auto;
+    
+
+
+  }
+  button{
     color:rgb(13, 2, 8);
     background-color: rgb(13, 2, 8);
-    border: 2px inset rgb(0, 143, 17);
-    text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+    border: 2px inset rgb(255, 167, 28);
+    text-shadow: 0 -2px rgb(252, 227, 211), 0 2px rgb(253, 187, 145),0 2px rgb(253, 187, 145),0 -2px rgb(252, 227, 211);
     box-shadow: 
     0 0 0 2px rgb(13, 2, 8),
-    0 0 0 3px rgb(0, 255, 65),
+    0 0 0 3px rgb(250, 217, 36),
     0 0 0 4px rgb(13, 2, 8),
-    0 0 0 5px rgb(0, 143, 17),
+    0 0 0 5px rgb(255, 167, 28),
     0 0 0 6px rgb(13, 2, 8);
     font-size:20px;
     font-family: Ruslan Display;
     height:30px;
     padding-left:10px;
-    margin:0 auto;
-    display:block;
-    
-    
+    margin-left:10px;
   }
   button:hover{
-    box-shadow: inset 0 0 0 15px rgb(0, 143, 17);
+    box-shadow: inset 0 0 0 15px rgb(255, 167, 28);
     transition: 350ms;
     cursor: pointer;
-
-}
-.block{
-    width:960px;
-    position:relative;
-    margin:50px auto;
-    
-}
+  
+  }

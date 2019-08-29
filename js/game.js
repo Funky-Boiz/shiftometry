@@ -11,6 +11,7 @@ var normalModeButton = document.getElementById('normal');
 var difficultyText = document.getElementById('difficultyText');
 var elScore = document.getElementById('score');
 var elAttempts = document.getElementById('attempts');
+var cssButton = document.getElementById('cssChanger');
 
 var goals = ['circle', 'square', 'triangle', 'hexagon'];
 var numberOfGoals = goals.length;
@@ -319,7 +320,22 @@ function setVolume(){
   backgroundMusic.volume = 0.4;
 }
 
+var switch1 = 0;
+function switchColors(e) {
+  e.preventDefault();
+  var css = document.getElementById('gameCSS');
+  console.log(css.href);
+  console.log(switch1);
+  if(switch1 === 1) {
+    css.href = '/css/game.css';
+    switch1 = 0;
+  }
+  else {
+    switch1 = 1;
+    css.href = '/css/game2.css';
+  }
 
+}
 setVolume();
 loadHighScore();
 scoreAndAttemptsOnPage();
@@ -331,7 +347,7 @@ document.addEventListener('keydown', logKey);
 tryAgainButton.addEventListener('submit', resetGame);
 hardModeButton.addEventListener('submit', setHardMode);
 normalModeButton.addEventListener('submit', setNormalMode);
-
+cssButton.addEventListener('submit', switchColors);
 
 
 
@@ -340,3 +356,4 @@ window.addEventListener('keydown', function(e){
     e.preventDefault();
   }
 }, false);
+
