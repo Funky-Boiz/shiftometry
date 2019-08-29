@@ -327,12 +327,12 @@ function switchColors(e) {
   console.log(css.href);
   console.log(switch1);
   if(switch1 === 1) {
-    css.href = '/css/game.css';
+    css.href = '../css/game.css';
     switch1 = 0;
   }
   else {
     switch1 = 1;
-    css.href = '/css/game2.css';
+    css.href = '../css/game2.css';
   }
 
 }
