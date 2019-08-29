@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 125%;
+  height: 500%;
   overflow: hidden;
-
+  z-index: -2;
 }
 
 .circles li{
@@ -138,7 +138,7 @@
   }
 
   100%{
-      transform: translateY(-1100px) rotate(720deg);
+      transform: translateY(-5000px) rotate(720deg);
       opacity: 1;
       border-radius: 0;
   }
@@ -171,12 +171,118 @@ h2 {
   text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
 }
 
+h3 {
+  text-align: center;
+  font-size: 40px;  
+  font-family: Ruslan Display;
+  margin-top:50px;
+  margin-bottom:100px;
+  color: rgb(13, 2, 8);
+  text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+}
+
 #aboutus-button{
-  /* text-align: center;
-  font-size: 100px;  
+  text-align: center;
+  font-size: 40px;  
   font-family: Ruslan Display;
   margin-top:20px;
   margin-bottom:100px;
   color: rgb(13, 2, 8);
-  text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17); */
+  text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+}
+
+.buttons{
+  position:relative;
+  z-index:2;
+  display: inline;
+  font-size:50px;
+  padding:20px;
+  font-family: Ruslan Display;
+  text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
+  margin-left: 30px;
+
+}
+
+.buttons:hover{
+  box-shadow: inset 0 0 0 15px rgb(0, 143, 17);
+  transition: 350ms;
+  cursor: pointer;
+}
+
+
+#game-button{
+  text-align: center;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+#corey {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#avrey {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#chris {
+  color: white;
+  text-align: center; 
+  margin-top: 100px;
+}
+
+#david {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#corey p{
+  width: 800px;
+  margin-left: 322px;
+  font-size: 26px;
+}
+
+#david p{
+  width: 800px;
+  margin-left: 322px;
+  font-size: 26px;
+}
+
+
+#chris p{
+  width: 800px;
+  margin-left: 322px;
+  font-size: 26px;
+}
+
+
+#avrey p{
+  width: 800px;
+  margin-left: 322px;
+  font-size: 26px;
+}
+
+#corey h2 {
+  margin-bottom: 20px;
+}
+
+
+#chris h2 {
+  margin-bottom: 20px;
+}
+
+
+#avrey h2 {
+  margin-bottom: 20px;
+}
+
+#david h2 {
+  margin-bottom: 20px;
 }

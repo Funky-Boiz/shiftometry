@@ -11,6 +11,7 @@ var normalModeButton = document.getElementById('normal');
 var difficultyText = document.getElementById('difficultyText');
 var elScore = document.getElementById('score');
 var elAttempts = document.getElementById('attempts');
+var cssButton = document.getElementById('cssChanger');
 
 var goals = ['circle', 'square', 'triangle', 'hexagon'];
 var numberOfGoals = goals.length;
@@ -23,15 +24,20 @@ var score = 0;
 var username = '';
 
 var attempts = 3;
+// grouping different users
+var normalUsers = [];
+var hardUsers = [];
 var groupedScores = [];
+
 
 var difficulty = 1;
 var currentGoalArray = Array.from(goals);
 
+
+
 function PeopleScores(name, scores){
   this.name = name;
   this.scores = scores;
-  groupedScores.push(this);
 }
 
 //position of moving block shape
@@ -53,10 +59,18 @@ function selectDifficulty(){
   }
 }
 
+function toggleDifficultyButton(){
+  if(difficulty === 1){
+    hardModeButton.classList.toggle('hidden');
+  }
+  if(difficulty === 2){
+    normalModeButton.classList.toggle('hidden');
+  }
+}
+
 function setHardMode(e){
   e.preventDefault();
   difficulty = 2;
-  console.log(difficulty);
   hardModeButton.classList.toggle('hidden');
   normalModeButton.classList.toggle('hidden');
   difficultyText.textContent = 'Mode: Hard';
@@ -65,7 +79,6 @@ function setHardMode(e){
 function setNormalMode(e){
   e.preventDefault();
   difficulty = 1;
-  console.log(difficulty);
   hardModeButton.classList.toggle('hidden');
   normalModeButton.classList.toggle('hidden');
   difficultyText.textContent = 'Mode: Normal';
@@ -91,7 +104,6 @@ function movingRight(){
       pos.x = 30;
       pos.y = 180;
       movingRight();
-      console.log(attempts);
       scoreAndAttemptsOnPage();
     }
     else{
@@ -133,7 +145,6 @@ function checkIfLevelUp(){
   if (toNextLevel > 3) {
     level++;
     toNextLevel = 1;
-    console.log(level);
   }
 }
 
@@ -145,17 +156,14 @@ function checkIfCorrect(array){
   else if(pos.y <= 155 && pos.y >= 105 && block.className === array[1].toString()){
     score+=100;
     toNextLevel++;
-    console.log('square');
   }
   else if(pos.y <= 255 && pos.y >= 205 && block.className === array[2].toString()){
     score+=100;
     toNextLevel++;
-    console.log('triangle');
   }
   else if(pos.y <= 355 && pos.y >= 305 && block.className === array[3].toString()){
     score+=100;
     toNextLevel++;
-    console.log('hexamex');
   }
   else {
     attempts--;
@@ -171,7 +179,7 @@ function playAvery(){
 
 function randomShapeGenerator(){
   var randomNumber = Math.floor(Math.random() * 4) + 1;
- 
+
   switch (randomNumber){
   case 1:
     //generate circle
@@ -216,12 +224,17 @@ function gameOver(){
   tryAgainScreen();
   saveHighScores();
   attempts = 3;
+  toggleDifficultyButton();
 }
 
 function loadHighScore(){
-  var loadedScore = JSON.parse(localStorage.getItem('scores'));
-  if(loadedScore){
-    groupedScores = loadedScore;
+  var loadedNormalScores = JSON.parse(localStorage.getItem('normalscores'));
+  if(loadedNormalScores){
+    normalUsers = loadedNormalScores;
+  }
+  var loadedHardScores = JSON.parse(localStorage.getItem('hardscores'));
+  if(loadedHardScores){
+    hardUsers = loadedHardScores;
   }
 }
 
@@ -232,6 +245,7 @@ function nameInputScreen(){
 
 function startGame(e){
   e.preventDefault();
+  toggleDifficultyButton();
   username = e.target.username.value;
   nameInputScreen();
   randomShapeGenerator();
@@ -240,7 +254,6 @@ function startGame(e){
   pos.y = 180;
   level = 6;
   movingRight();
-  console.log(username);
 }
 
 function tryAgainScreen(){
@@ -264,7 +277,6 @@ function resetGame(e){
 function generateRandomGoal(){
   var localGoalArray = Array.from(goals);
   var randomGoalArray = [];
-  console.log(localGoalArray);
   for (var i = 0; i < numberOfGoals; i++){
     var randomGoal = localGoalArray.splice(Math.floor(Math.random() * localGoalArray.length), 1);
     var elGoal = document.getElementById(`goal${i+1}`);
@@ -276,8 +288,8 @@ function generateRandomGoal(){
 
 
 
-function organizedHighScore(){
-  var highestLowest = groupedScores;
+function organizedHighScore(array){
+  var highestLowest = array;
   highestLowest.sort(function(a, b) {
     return b.scores - a.scores;
   });
@@ -288,10 +300,19 @@ function organizedHighScore(){
 }
 
 function saveHighScores(){
-  new PeopleScores(username, score);
-  organizedHighScore();
-  var storeScores = JSON.stringify(groupedScores);
-  localStorage.setItem('scores', storeScores);
+  var currentPlayer = new PeopleScores(username, score);
+  if (difficulty === 1){
+    normalUsers.push(currentPlayer);
+  }
+  else if (difficulty === 2){
+    hardUsers.push(currentPlayer);
+  }
+  organizedHighScore(normalUsers);
+  organizedHighScore(hardUsers);
+  var storeNormalUsers = JSON.stringify(normalUsers);
+  var storeHardUsers = JSON.stringify(hardUsers);
+  localStorage.setItem('normalscores', storeNormalUsers);
+  localStorage.setItem('hardscores', storeHardUsers);
 }
 
 function setVolume(){
@@ -299,6 +320,22 @@ function setVolume(){
   backgroundMusic.volume = 0.4;
 }
 
+var switch1 = 0;
+function switchColors(e) {
+  e.preventDefault();
+  var css = document.getElementById('gameCSS');
+  console.log(css.href);
+  console.log(switch1);
+  if(switch1 === 1) {
+    css.href = '../css/game.css';
+    switch1 = 0;
+  }
+  else {
+    switch1 = 1;
+    css.href = '../css/game2.css';
+  }
+
+}
 setVolume();
 loadHighScore();
 scoreAndAttemptsOnPage();
@@ -310,6 +347,7 @@ document.addEventListener('keydown', logKey);
 tryAgainButton.addEventListener('submit', resetGame);
 hardModeButton.addEventListener('submit', setHardMode);
 normalModeButton.addEventListener('submit', setNormalMode);
+cssButton.addEventListener('submit', switchColors);
 
 
 
@@ -318,3 +356,4 @@ window.addEventListener('keydown', function(e){
     e.preventDefault();
   }
 }, false);
+
