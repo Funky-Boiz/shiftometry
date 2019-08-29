@@ -287,8 +287,8 @@ function generateRandomGoal(){
 
 
 
-function organizedHighScore(){
-  var highestLowest = groupedScores;
+function organizedHighScore(array){
+  var highestLowest = array;
   highestLowest.sort(function(a, b) {
     return b.scores - a.scores;
   });
@@ -306,7 +306,8 @@ function saveHighScores(){
   else if (difficulty === 2){
     hardUsers.push(currentPlayer);
   }
-  organizedHighScore();
+  organizedHighScore(normalUsers);
+  organizedHighScore(hardUsers);
   var storeNormalUsers = JSON.stringify(normalUsers);
   var storeHardUsers = JSON.stringify(hardUsers);
   localStorage.setItem('normalscores', storeNormalUsers);
