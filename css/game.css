@@ -199,7 +199,7 @@ a{
     }
 
     100%{
-        transform: translateY(-1100px) rotate(720deg);
+        transform: translateY(-1500px) rotate(720deg);
         opacity: 1;
         border-radius: 0;
     }
@@ -322,7 +322,7 @@ a{
 .goal {
     border: inset rgb(0, 255, 65) 5px;
     color: rgb(13, 2, 8);
-    font-size:20px;
+    font-size:30px;
     box-sizing:border-box;
     font-family: Ruslan Display;
     text-shadow: 0 -2px rgb(0, 255, 65), 0 2px rgb(0, 143, 17),0 2px rgb(0, 143, 17),0 -2px rgb(0, 143, 17);
@@ -585,4 +585,8 @@ input{
 footer{
     color: white;
     float: right;
+}
+
+#switch{
+
 }

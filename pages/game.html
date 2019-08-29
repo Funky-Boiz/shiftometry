@@ -3,8 +3,8 @@
     <head>
         <title>SHIFTOMETRY</title>
         <link rel = "stylesheet"  type = "text/css" href = "/css/reset.css" />
-        <!-- <link rel = "stylesheet"  type = "text/css" href = "/css/game.css" /> -->
-        <link rel = "stylesheet"  type = "text/css" href = "/css/game2.css" />
+        <link rel = "stylesheet"  type = "text/css" href = "/css/game.css" id = "gameCSS"/>
+        <!-- <link rel = "stylesheet"  type = "text/css" href = "/css/game2.css" /> -->
         <link href="https://fonts.googleapis.com/css?family=Ruslan+Display&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -74,12 +74,15 @@
               <form id="hardMode">
                   <button id = "hard" type="submit">Hard Mode</button>
                 </form>
-                <form id="normal" id="normalMode" class="hidden">
+                <form id="normal" class="hidden">
                     <button type="submit">Normal Mode</button>
                 </form>
             </section>
         </main>
         <footer>
+                <form id="cssChanger" >
+                        <button  id = "switcher" type="submit">Color Switch</button>
+                    </form>
             &copy;2019 Funky Boiz
             <audio id="avery" src="/assets/sounds/Avery oooooofffff-[AudioTrimmer.com].mp3"></audio>
             <audio id="backgroundMusic" src="/assets/sounds/babbys_first_audio_file.mp3" autoplay loop></audio>
