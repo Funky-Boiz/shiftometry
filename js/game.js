@@ -238,7 +238,7 @@ function startGame(e){
   block = document.getElementById('shape');
   pos.x = 30;
   pos.y = 180;
-  level = 2;
+  level = 6;
   movingRight();
   console.log(username);
 }
