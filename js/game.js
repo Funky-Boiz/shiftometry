@@ -85,6 +85,7 @@ function setNormalMode(e){
 }
 
 //move block shape to the right and remove when it hits the end
+//source: https://css-tricks.com/using-requestanimationframe/
 function movingRight(){
   if (pos.x < 770){
     requestAnimationFrame(movingRight);
@@ -350,7 +351,8 @@ normalModeButton.addEventListener('submit', setNormalMode);
 cssButton.addEventListener('submit', switchColors);
 
 
-
+//preventing page from scrolling
+//source: https://stackoverflow.com/questions/8916620/disable-arrow-key-scrolling-in-users-browser
 window.addEventListener('keydown', function(e){
   if([32,37,38,39,40].indexOf(e.keyCode) > -1) {
     e.preventDefault();
